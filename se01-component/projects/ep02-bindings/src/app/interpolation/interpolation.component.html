@@ -1,0 +1,31 @@
+<h1>{{model.titile}}</h1>
+<img src="/assets/images/{{model.image}}" class="img-fluid w-100" alt="cover">
+
+<pre>{{data | json}}</pre>
+
+<div> data.id+100 = {{data.id + 100}}</div>
+<br>
+
+<h4>Component Method</h4>
+<p>10*5 = {{times(10,5)}}</p>
+<br>
+
+<h4>Input Variable</h4>
+<ol>
+    <li *ngFor="let item of array">{{item}}</li>
+</ol>
+<p>{{item}}</p>
+<br>
+
+<h4 #header>Template Reference</h4>
+<p>{{header.innerText}}</p>
+
+<div class="row">
+    <div class="col-4">
+        <input #input (keyup)="0" type="text" class="form-control" placeholder="Enter Keyworkd">
+    </div>
+    <div class="col-4">
+        <span>{{input.value}}</span>
+    </div>
+</div>
+

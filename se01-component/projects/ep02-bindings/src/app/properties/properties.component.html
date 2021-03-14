@@ -1,0 +1,50 @@
+<h3>Properties Bindings</h3>
+
+<div class="card mb-4">
+    <div class="card-header">DOM Property</div>
+    <div class="card-body">
+        <button (click)="showBtnState()" class="btn btn-primary mr-4">{{showBtn?'Show':'Hide'}}</button>
+        <button [hidden]="showBtn" class="btn btn-danger">Tragger</button>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header">Component Property</div>
+    <div class="card-body">
+        <div class="row">
+        <!-- Input from parent -->
+            <div class="col-4">
+                <div class="input-group">
+                <input #inputKeyworkd type="text" class="form-control" placeholder="Enter Keyworlds">
+                <div class="input-group-append">
+                    <span (click)="targetKeyworkd=inputKeyworkd.value" class="input-group-text">ADD</span>
+                </div>
+                </div>
+            </div>
+            <!-- Child Component -->
+            <div class="col-4">
+                <app-props-child [keyworld] = "targetKeyworkd"></app-props-child>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header">Directive Properties</div>
+    <div class="car-body mt-4">
+        <div class="row">
+            <div class="col-4">
+                <select #colorSelect (change)="backGround=colorSelect.value" class="form-control">
+                    <option value="green">Green</option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="skyblue">Sky Blue</option>
+                </select>
+            </div>
+            <div [appBackgroundColor]="backGround" class="col-4 bordered ">
+                
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,18 @@
+<h4>Attribute Binding</h4>
+
+<div class="card mb-4">
+    <div class="card-header">Attribute Binding</div>
+    <div  class="card-body">
+        <input #slider (change)="currentValue=slider.value" type="range" min="-100" step="10" max="100" [value]="currentValue" aria-valuemin="-100" aria-valuemax="100" [attr.aria-valuenow]="currentValue" class="mr-4" style="width: 300px;">
+        <span>{{currentValue}}</span>
+    </div>
+    
+</div>
+
+<div class="card mb-4">
+    <div class="card-header">Class Binding</div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header">Style Binding</div>
+</div>
